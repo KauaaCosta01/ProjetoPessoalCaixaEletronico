@@ -1,34 +1,40 @@
-# 💳 Projeto Banco Simples em Java
+# 🏦 Simulador de Banco em Java
 
-Este projeto é um **sistema bancário em console** desenvolvido em **Java** para praticar conceitos de programação estruturada, uso de condicionais, laços de repetição e entrada de dados com `Scanner`.
+Este projeto é um **simulador simples de sistema bancário** desenvolvido em Java, com foco em praticar conceitos fundamentais de programação.
 
 ## 🚀 Funcionalidades
 
-- **Cadastro de Usuário** com senha.
-- **Login** com até 3 tentativas (bloqueio em caso de falha).
-- **Menu de Serviços**:
-  - Consultar saldo.
-  - Realizar depósito (com validação de valor).
-  - Realizar saque (com verificação de saldo).
-  - Encerrar sistema.
+- Cadastro de até **3 contas bancárias** com:
+  - Usuário
+  - Senha
+  - Saldo inicial
+
+- Login com **até 3 tentativas** antes do bloqueio da conta
+- Serviços disponíveis:
+  - Consultar saldo
+  - Depositar valores
+  - Sacar valores
+  - Encerrar sessão
 
 ## 🛠️ Tecnologias Utilizadas
-- **Java (JDK 17+)**
-- **Scanner** para entrada de dados do usuário.
-- Estruturas de **condicionais (if/else, switch)**.
-- **Loops (while, do-while)**.
 
-## 🎯 Objetivo
-O projeto tem como finalidade **aprimorar habilidades em lógica de programação**, reforçando:
-- Estruturas de decisão.
-- Estruturas de repetição.
-- Validação de dados.
-- Simulação de fluxo bancário.
+- **Java 17+**
+- **Scanner** para entrada de dados no console
+- **Arrays** para armazenamento de usuários, senhas e saldos
+- **Estruturas de controle** (if, switch, loops)
 
-## 📌 Próximos Passos
-- Implementar **persistência de dados** (salvar contas em arquivos ou banco de dados).
-- Criar **classe ContaBancaria** para aplicar conceitos de **POO**.
-- Adicionar **tratamento de exceções** para entradas inválidas.
-- Evoluir para uma **interface gráfica (Swing ou JavaFX)** futuramente.
+## 📚 Conceitos Praticados
+
+- Estruturas condicionais (`if`, `else`, `switch`)
+- Laços de repetição (`for`, `while`, `do-while`)
+- Arrays para manipulação de dados
+- Controle de fluxo e validações
+
+## 🔮 Próximos Passos
+
+- Aumentar o número de contas dinamicamente (usar ArrayList em vez de arrays fixos)
+- Implementar **transferência entre contas**
+- Melhorar segurança com **hash de senhas**
+- Criar uma interface gráfica simples com **Java Swing ou JavaFX**
 
 ---
