@@ -31,4 +31,14 @@ public class Banco {
         }
         return null; // Se não encontrar, retorna nulo
     }
+
+    // Método para buscar uma conta pelo nome de usuário
+    public ContaBancaria buscarConta(String usuario) {
+        for (int i = 0; i < totalContas; i++) {
+            if (contas[i].getUsuario().equals(usuario)) {
+                return contas[i];
+            }
+        }
+        return null; // Se não encontrar, retorna nulo
+    }
 }

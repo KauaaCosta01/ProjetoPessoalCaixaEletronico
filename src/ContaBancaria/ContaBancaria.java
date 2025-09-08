@@ -49,4 +49,20 @@ public class ContaBancaria {
             System.out.printf("Saque de R$ %.2f realizado com sucesso!\n", valor);
         }
     }
+
+    // Método para transferir dinheiro para outra conta
+    public void transferir(ContaBancaria destino, double valor) {
+        if (valor <= 0) {
+            System.out.println("Valor inválido para transferência!");
+        } else if (valor > saldo) {
+            System.out.println("Erro! Saldo insuficiente para transferência.");
+        } else {
+            this.saldo -= valor; // retira da conta de origem
+            destino.depositar(valor); // adiciona na conta de destino
+            System.out.printf("Transferência de R$ %.2f para %s realizada com sucesso!\n",
+                    valor, destino.getUsuario());
+        }
+    }
+
+    // Futuras Implementações
 }

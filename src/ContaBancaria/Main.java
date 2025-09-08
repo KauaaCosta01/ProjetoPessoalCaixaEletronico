@@ -7,7 +7,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         // Criando um banco com capacidade para 3 contas
-        Banco banco = new Banco(3);
+        Banco banco = new Banco(2);
 
         // === Cadastro de contas ===
         System.out.println("=== Cadastro de Contas Bancárias ===");
@@ -58,9 +58,11 @@ public class Main {
             System.out.println("1 - Ver Saldo");
             System.out.println("2 - Depositar");
             System.out.println("3 - Sacar");
-            System.out.println("4 - Sair");
+            System.out.println("4 - Transferir");
+            System.out.println("5 - Sair");
             System.out.print("Escolha uma opção: ");
             servicos = scanner.nextInt();
+            scanner.nextLine(); // limpar buffer
 
             switch (servicos) {
                 case 1:
@@ -77,13 +79,26 @@ public class Main {
                     contaLogada.sacar(valorSaque);
                     break;
                 case 4:
+                    System.out.print("Digite o usuário da conta destino: ");
+                    String usuarioDestino = scanner.nextLine();
+                    ContaBancaria contaDestino = banco.buscarConta(usuarioDestino);
+
+                    if (contaDestino != null) {
+                        System.out.print("Digite o valor para transferência: ");
+                        double valorTransferencia = scanner.nextDouble();
+                        contaLogada.transferir(contaDestino, valorTransferencia);
+                    } else {
+                        System.out.println("Conta destino não encontrada!");
+                    }
+                    break;
+                case 5:
                     System.out.println("Encerrando o sistema...");
                     break;
                 default:
                     System.out.println("Opção inválida!");
             }
 
-        } while (servicos != 4);
+        } while (servicos != 5);
 
         scanner.close();
     }
